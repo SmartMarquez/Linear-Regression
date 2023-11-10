@@ -45,20 +45,10 @@ def coeficiente_estimado2(x, y):
 def coeficiente_estimado3(x, y):
     # cantidad de pares a observar
     n = np.size(x)
- 
-    # Medias de los vectores x e y.
-    media_x = np.mean(x)
-    media_y = np.mean(y)
 
     # Calculando los coeficientes de regresion como fue visto en clase
     # la sumatoria de x por y, menos la sumatoria de x por la sumatoria de y sobre
     # la sumatoria de x al cuadrado menos el resultado de la sumatoria de x, elevado al cuadrado     
-
-    sumxmedxymedy = 0;
-    sumxsqrd = 0;
-    for i in range(0,n):
-      sumxmedxymedy += (x[i] - media_x)*(y[i]-media_y)
-      sumxsqrd += ((x[i]-media_x)*(x[i]-media_x))
 
     b_1 = (n*np.sum(y*x) - np.sum(x)*np.sum(y))/ (n*np.sum(x*x) - np.sum(x)*np.sum(x))
     b_0 = (np.sum(y)- b_1 * np.sum(x))/n
